@@ -23,7 +23,7 @@ If you are a total beginner to this, start here!
 
 ### Introduction
 ---
-<img src="https://i.imgur.com/b5Uj6I9.png" width="1000" style="border-radius: 8;">
+![](https://i.imgur.com/8ILnVPz.png)
 
 This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send make friend request.
 
@@ -56,12 +56,14 @@ Login
 Chat histoy  
 * The friend list page can show the chat history with friends
 
-<img src="https://i.imgur.com/AApuUUt.gif" width="350" style="border-radius: 8;">
+<img src="https://i.imgur.com/AApuUUt.gif" width="450" style="border-radius: 8px;">
 
 Chat with friend in realtime
 * click a friend on the friend list to enter an exclusive chat room
 
-<img src="https://github.com/Chau-TsaiYing/Random_Chatroom/blob/main/LINE_P2021629_232955.gif" width="650" style="border-radius: 8;">
+<img src="https://github.com/Chau-TsaiYing/Random_Chatroom/blob/main/LINE_P2021629_232955.gif" width="650">
+
+
 
 
 
