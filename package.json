@@ -1,0 +1,27 @@
+{
+  "name": "hw5temp",
+  "version": "1.0.0",
+  "description": "首先去nodejs官網安裝適合的版本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.1",
+    "express-ejs-extend": "0.0.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.1",
+    "firebase": "^8.6.2",
+    "firebase-admin": "^9.8.0",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {}
+}
