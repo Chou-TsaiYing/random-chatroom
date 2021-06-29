@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+        <link href="/css/chat_style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+	<!--Coded With Love By Mutiullah Samim-->
+	<body>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="container">
+					<div class="card">
+						<div class="card-header msg_head">
+							<div class="d-flex bd-highlight justify-content-between">
+								<div class="user_info">
+									<span>Chat with </span><span id="receiver_name" > <%= receiver_name %> </span>
+								</div>
+                                <a  href="/user/friend" type="button" id="friend_btn" class="btn">go back to friend list</a>
+							</div>
+						</div>
+						<div class="card-body msg_card_body" id="msg_content">
+							<% for(var i=0; i<messageList.length; i++ ){ %>
+								<% if( sender_name == messageList[i].sender ) { %> 
+									<div class="d-flex justify-content-end mb-4">
+										<div class="msg_cotainer_send">
+											<%= messageList[i].message %>
+											<div class="msg_time_send"><span><%= messageList[i].time %></span></div>
+										</div>
+									</div>
+								<% } else if ( receiver_name == messageList[i].sender ) { %>
+									<div class="d-flex justify-content-start mb-4">
+										<div class="img_cont_msg">
+											<img src="/image/user.jpg" class="rounded-circle user_img_msg">
+										</div>
+										<div class="msg_cotainer">
+											<span class="msgSend_name"><%= messageList[i].sender %></span>
+											<%= messageList[i].message %>
+											<div class="msg_time" ><span><%= messageList[i].time %></span></div>
+										</div>
+									</div>
+								<% } %>  
+							<% } %>  
+						</div>
+						<div class="card-footer">
+							<div class="input-group">
+								<input type="text" class="form-control type_msg" placeholder="Type your message..."></input>
+							    <button type="button" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+$(document).ready(function(){
+	 scrollWindow();
+     var sender_name = '<%= sender_name %>'
+	 var receiver_name = '<%= receiver_name %>'
+	 var room_key = '<%= room_key %>'
+	 console.log(sender_name + 'chat with ' + receiver_name + ' in room ' + room_key);
+
+     var socket = io("http://localhost:3000",{
+          query:{
+               username: '<%= sender_name %>'
+          }
+     });
+     socket.on('connect', function (data) {  
+        console.log('sucess');   
+     })
+	 socket.on('message',function(data){
+		//console.log(data);
+
+		if(data.sender == sender_name){
+			$('#msg_content').append(
+				`<div class="d-flex justify-content-end mb-4">
+					<div class="msg_cotainer_send">
+						${data.msg}
+						<div class="msg_time_send"><span>${data.time}</span></div>
+					</div>
+				</div>`
+			)
+		}
+		else if(data.receiver == sender_name){
+			$('#msg_content').append(
+				`<div class="d-flex justify-content-start mb-4">
+					<div class="img_cont_msg">
+						<img src="/image/user.jpg" class="rounded-circle user_img_msg">
+					</div>
+					<div class="msg_cotainer">
+						<span class="msgSend_name">${sender_name}</span>
+						${data.msg}
+						<div class="msg_time"><span>${data.time}</span></div>
+					</div>
+				</div>`
+			)
+		}
+		scrollWindow();
+	 })
+
+	 //if click the send button, send message
+	 $('.send_btn').on('click', function(){
+		 if($('.type_msg').val()!=""){
+			 send_message();
+		 }
+	 })
+
+	 //enter and send message
+	 $('.type_msg').keyup(function(enevt){
+		if(event.which == 13 && $('.type_msg').val()!="" ){
+			send_message();
+		}
+	 })
+
+	 function send_message(){
+		 var data = $('.type_msg').val();
+		 var current_time = get_time(Date.now());
+		 //console.log(data);
+		 //send message
+		 socket.emit('message',{
+			sender: sender_name,
+			receiver: receiver_name,
+			msg: data,
+			time: current_time,
+			room_key: room_key
+		 })
+		 $('.type_msg').val("");
+	 }
+
+	 function scrollWindow(){
+		 let h = document.querySelector('.msg_card_body');
+		 h.scrollTo(0, h.scrollHeight);
+	 }
+})
+function get_time(timestamp){
+	var date = new Date(timestamp);
+	var time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+	var today_date = date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate();
+	return today_date+' '+time;
+}    
+</script>

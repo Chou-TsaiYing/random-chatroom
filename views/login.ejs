@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link href="/css/login_style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/1adb36c0ef.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-login">
+                        <div class="panel-heading">
+                               <p class="login" id="login-form-link">Sign in</p>
+                            <hr>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <p class="login-text">Sign in to start your session</p>
+                                    <form id="login-form" action="/user/login" method="post" style="display: block;">
+                                        <div class="form-group">
+                                        <div style="margin-bottom: 20px" class="input-group">
+                                            <input type="text" name="email" id="email" class="form-control" placeholder="Email" autocomplete="on">
+                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <div style="margin-bottom: 20px" class="input-group">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                                        <input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-login" value="Log In">
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                                        <input type="reset" name="login-cancel" id="login-cancel" class="form-control btn btn-login" value="Cancel">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <a class="register-text" href="/user/register">Register a new membership</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% if(typeof alert != 'undefined'){ %>
+            <% alert.forEach(function(error){ %>
+                <div class="container" style="width:38%">
+                    <div class="alert alert-danger alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Error!</strong> <%= error.msg %>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </body>
+</html>

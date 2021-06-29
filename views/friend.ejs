@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Friend List</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+        <link href="/css/friend_style.css" rel="stylesheet" type="text/css">
+	</head>
+	<!--Coded With Love By Mutiullah Samim-->
+	<body>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+                    <div class="card contacts_card">
+                        <div class="card-header">
+                            <div class="d-flex bd-highlight justify-content-between information">
+                                <span id="hello" >Hello <%= user.username%> </span>
+                                <a type="button" id="makeFriend_btn" class="btn" href="/?">Make some friends</a>
+                            </div>
+                            <span id="text" >Your friend list</span>
+                        </div>
+					    <div class="card-body contacts_body">
+						<ui class="contacts">
+                            <% for(var i=1; i<user.friends.length; i+=2) { %>
+                                <li>
+                                    <div class="d-flex">
+                                        <div class="img_cont">
+                                            <img src="/image/user.jpg" class="rounded-circle user_img">
+                                        </div>
+                                        <a href= "/<%= user.uid %>_<%= user.friends[i-1] %> "><%= user.friends[i] %></a>
+                                    </div>
+                                </li>
+                            <% } %>
+						</ui>
+					</div>
+				</div>
+            </div>
+		</div>
+	</body>
+</html>
