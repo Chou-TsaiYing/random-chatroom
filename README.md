@@ -3,12 +3,12 @@ title: 'One to One Random Chatroom with Nodejs Socket.io Firebase'
 disqus: hackmd
 ---
 
-One to One Random Chatroom with Nodejs Socket.io Firebase
+One to One Random Chatroom  
+with Nodejs Socket.io Firebase
 ===
 
-## Table of Contents
 
-
+[TOC]
 
 ## Beginners Guide
 
@@ -19,75 +19,51 @@ If you are a total beginner to this, start here!
 3. Choose a way to sign in
 4. Start writing note!
 
-User story
+## About the project
+
+### Introduction
+---
+![](https://i.imgur.com/b5Uj6I9.png)
+
+This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send make friend request.
+
+### Built with
+----
+* FrontEnd: Use EJS with Bootstrap  
+* BackEnd: Use Node.js framework
+* Use the Socket.io to establish the connection
+* Database: Firebase
+
+## The feature of the project
+
+### Login and Signin
 ---
 
-```gherkin=
-Feature: Guess the word
+![](https://i.imgur.com/JqlZzaL.png)
 
-  # The first example has two steps
-  Scenario: Maker starts a game
-    When the Maker starts a game
-    Then the Maker waits for a Breaker to join
+Signin  
+* cannot use dumplicate email address
+* the password must not be less than 6 digits
+* password and confirm password must be the same
 
-  # The second example has three steps
-  Scenario: Breaker joins a game
-    Given the Maker has started a game with the word "silky"
-    When the Breaker joins the Maker's game
-    Then the Breaker must guess a word with 5 characters
-```
-> I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it. [name=Bill Gates]
+Login  
+* need to use an email address as a registered account 
+* If you type the password correctly, you will enter the friend list page
 
-
-```gherkin=
-Feature: Shopping Cart
-  As a Shopper
-  I want to put items in my shopping cart
-  Because I want to manage items before I check out
-
-  Scenario: User adds item to cart
-    Given I'm a logged-in User
-    When I go to the Item page
-    And I click "Add item to cart"
-    Then the quantity of items in my cart should go up
-    And my subtotal should increment
-    And the warehouse inventory should decrement
-```
-
-> Read more about Gherkin here: https://docs.cucumber.io/gherkin/reference/
-
-User flows
+### Friend list page
 ---
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-Note left of Alice: Alice responds
-Alice->Bob: Where have you been?
-```
 
-> Read more about sequence-diagrams here: http://bramp.github.io/js-sequence-diagrams/
+Chat histoy  
+* The friend list page can show the chat history with friends
 
-Project Timeline
----
-```mermaid
-gantt
-    title A Gantt Diagram
+![](https://i.imgur.com/AApuUUt.gif =350x)
 
-    section Section
-    A task           :a1, 2014-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2014-01-12  , 12d
-    anther task      : 24d
-```
+Chat with friend in realtime
+* click a friend on the friend list to enter an exclusive chat room
 
-> Read more about mermaid here: http://mermaid-js.github.io/mermaid/
+![](https://doc-0g-94-docs.googleusercontent.com/docs/securesc/p2g5i0tgh5cpaoild3039tgmgdbijo7b/nrodrl0uj0sf2q4qlmvrit87g8n8rldk/1624987875000/12868469983771475834/12868469983771475834/1_dloVCEZaeJgNvRaMtTavjocf9c7XI06?e=download&authuser=0)
 
-## Appendix and FAQ
 
-:::info
-**Find this document incomplete?** Leave a comment!
-:::
 
-###### tags: `Templates` `Documentation`
+
+
