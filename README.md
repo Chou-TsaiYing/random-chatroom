@@ -61,7 +61,7 @@ Chat histoy
 Chat with friend in realtime
 * click a friend on the friend list to enter an exclusive chat room
 
-<img src="https://github.com/Chau-TsaiYing/Random_Chatroom/blob/main/LINE_P2021629_232955.gif" width="450" style="border-radius: 8;">
+<img src="https://github.com/Chau-TsaiYing/Random_Chatroom/blob/main/LINE_P2021629_232955.gif" width="1000" style="border-radius: 8;">
 
 
 
