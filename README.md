@@ -23,7 +23,7 @@ If you are a total beginner to this, start here!
 
 ### Introduction
 ---
-<img src="https://i.imgur.com/b5Uj6I9.png" width="450" style="border-radius: 8px;">
+<img src="https://i.imgur.com/b5Uj6I9.png" width="1000" style="border-radius: 8px;">
 
 This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send make friend request.
 
