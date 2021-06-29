@@ -1,17 +1,14 @@
 ---
-title: 'Project documentation template'
+title: 'One to One Random Chatroom with Nodejs Socket.io Firebase'
 disqus: hackmd
 ---
 
-Project Title
+One to One Random Chatroom with Nodejs Socket.io Firebase
 ===
-![downloads](https://img.shields.io/github/downloads/atom/atom/total.svg)
-![build](https://img.shields.io/appveyor/ci/:user/:repo.svg)
-![chat](https://img.shields.io/discord/:serverId.svg)
 
 ## Table of Contents
 
-[TOC]
+
 
 ## Beginners Guide
 
