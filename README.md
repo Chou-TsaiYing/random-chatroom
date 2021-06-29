@@ -50,7 +50,7 @@ Login
 Chat histoy  
 * The friend list page can show the chat history with friends
 
-<img src="https://i.imgur.com/AApuUUt.gif" width="450" style="border-radius: 8px;">
+<img src="https://i.imgur.com/AApuUUt.gif" width="350" style="border-radius: 8px;">
 
 Chat with friend in realtime
 * click a friend on the friend list to enter an exclusive chat room
