@@ -28,17 +28,17 @@ This project can chat with friends realtime. Enter the random chat room, and you
 
 ## The feature of the project
 
-### Login and Signin
+### Login and Register
 ---
 
 ![](https://i.imgur.com/JqlZzaL.png)
 
-Signin  
+Login  
 * cannot use dumplicate email address
 * the password must not be less than 6 digits
 * password and confirm password must be the same
 
-Login  
+Register 
 * need to use an email address as a registered account 
 * If you type the password correctly, you will enter the friend list page
 
