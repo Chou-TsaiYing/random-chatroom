@@ -1,6 +1,4 @@
----
-title: 'One to One Random Chatroom with Nodejs Socket.io Firebase'
-disqus: hackmd
+
 ---
 
 One to One Random Chatroom  
