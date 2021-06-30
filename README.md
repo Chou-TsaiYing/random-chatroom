@@ -1,6 +1,3 @@
-
----
-
 One to One Random Chatroom  
 with Nodejs Socket.io Firebase
 ===
