@@ -56,6 +56,7 @@ Chat with friend in realtime
 <img src="https://github.com/Chau-TsaiYing/Random_Chatroom/blob/main/LINE_P2021629_232955.gif" width="650">
 
 ### Random chat room
+---
 
 Random chat
 * Enter the random chat room, you will be in waiting queue and wait for matching with others 
