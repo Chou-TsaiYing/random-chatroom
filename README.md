@@ -12,7 +12,7 @@ If you are a total beginner to this, start here!
 ---
 ![](https://i.imgur.com/8ILnVPz.png)
 
-This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send make friend request.
+This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send friend request.
 
 ### Built with
 ----
