@@ -12,7 +12,7 @@ var firebase = require('../connections/firebse_client');
 
 //friend list route
 router.get('/friend', function(req,res){
-    if(req.session.user !== null){
+    if(req.session.user !== null && req.session.user !== undefined){
         req.user=req.session.user;
         let uid = req.user.uid;
         //console.log(uid);
@@ -43,6 +43,9 @@ router.get('/friend', function(req,res){
                 res.render('friend',req);
             }
         )
+    }
+    else{
+        res.render('friend');
     }
 })
 //register finish
