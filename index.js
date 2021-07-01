@@ -45,7 +45,7 @@ app.use('/user', router);
 //set firebase
 
 // let firebaseDb = require('../HW5temp/connections/firebase_admin');
-let firebase = require('../HW5temp/connections/firebse_client');
+let firebase = require(__dirname+'/connections/firebse_client');
 const { create } = require('domain');
 const { userInfo } = require('os');
 const { resolve } = require('path');
