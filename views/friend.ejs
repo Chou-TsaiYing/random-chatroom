@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
         <link href="/css/friend_style.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	</head>
 	<!--Coded With Love By Mutiullah Samim-->
 	<body>
@@ -16,22 +17,26 @@
                     <div class="card contacts_card">
                         <div class="card-header">
                             <div class="d-flex bd-highlight justify-content-between information">
-                                <span id="hello" >Hello <%= user.username%> </span>
+                                <% if(typeof user != 'undefined'){ %> 
+                                    <span id="hello" >Hello <%= user.username%> </span>
+                                <% } %>
                                 <a type="button" id="makeFriend_btn" class="btn" href="/?">Make some friends</a>
                             </div>
                             <span id="text" >Your friend list</span>
                         </div>
 					    <div class="card-body contacts_body">
 						<ui class="contacts">
-                            <% for(var i=1; i<user.friends.length; i+=2) { %>
-                                <li>
-                                    <div class="d-flex">
-                                        <div class="img_cont">
-                                            <img src="/image/user.jpg" class="rounded-circle user_img">
+                            <% if(typeof user != 'undefined'){ %> 
+                                <% for(var i=1; i<user.friends.length; i+=2) { %>
+                                    <li>
+                                        <div class="d-flex">
+                                            <div class="img_cont">
+                                                <img src="/image/user.jpg" class="rounded-circle user_img">
+                                            </div>
+                                            <a href= "/<%= user.uid %>_<%= user.friends[i-1] %> "><%= user.friends[i] %></a>
                                         </div>
-                                        <a href= "/<%= user.uid %>_<%= user.friends[i-1] %> "><%= user.friends[i] %></a>
-                                    </div>
-                                </li>
+                                    </li>
+                                <% } %>
                             <% } %>
 						</ui>
 					</div>
@@ -40,3 +45,18 @@
 		</div>
 	</body>
 </html>
+<script>
+    var username="";
+    '<% if(typeof user != "undefined"){ %>'
+		username =  '<%= user.username %>';
+	'<% } %>'
+    if(username == ""){
+        Swal.fire({
+            icon: "warning",
+            title: "You should login first!",
+            showConfirmButton: true,
+			}).then(function (result) {
+				window.location.href = "/user/login";
+        }); 
+    }
+</script>
