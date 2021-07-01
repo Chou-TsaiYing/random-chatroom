@@ -45,7 +45,7 @@ app.use('/user', router);
 //set firebase
 
 // let firebaseDb = require('../HW5temp/connections/firebase_admin');
-let firebase = require(__dirname+'/connections/firebse_client');
+let firebase = require(__dirname +'/connections/firebse_client');
 const { create } = require('domain');
 const { userInfo } = require('os');
 const { resolve } = require('path');
@@ -60,8 +60,13 @@ app.get('/user/register', function(req,res){
 })
 
 app.get('/?',function(req, res){
-    req.user = req.session.user;
-    res.render(__dirname+'/views/random_chat.ejs',req)
+    if(req.session.user != undefined){
+        req.user = req.session.user;
+        res.render(__dirname+'/views/random_chat.ejs',req)
+    }
+    else{
+        res.render(__dirname+'/views/random_chat.ejs')
+    }
 })
 
 firebase.database().ref('friendList').on('value', function (snapshot) {
