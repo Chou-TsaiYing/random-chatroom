@@ -10,6 +10,7 @@
         <link href="/css/random_chat_style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	</head>
 	<!--Coded With Love By Mutiullah Samim-->
 	<body>
@@ -20,7 +21,9 @@
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight justify-content-between">
 								<div class="user_info">
+								<% if(typeof user != 'undefined' ) {%> 
 									<span>Hello <%= user.username %> </span><span id="receiver_name" ></span>
+								<% } %>
 								</div>
                                 <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
                                 <div class="action_menu">
@@ -51,10 +54,29 @@ $(document).ready(function(){
 	socket.on('connect', function (data) {  
         console.log('sucess'); 
     })
-	var username =  '<%= user.username %>';
-	var uid =  '<%= user.uid %>';
-	var room="";
+	var username="";
+	var uid="";
+	'<% if(typeof user != "undefined"){ %>'
+		username =  '<%= user.username %>';
+		uid =  '<%= user.uid %>';
+			//send user information to backend
+		socket.emit('newUser',{
+			username: username,
+			uid: uid
+		})
+	'<% } %>'
+	console.log(username);
+	if(username == ""){
+		Swal.fire({
+            icon: "warning",
+            title: "You should login first!",
+            showConfirmButton: true,
+			}).then(function (result) {
+				window.location.href = "/user/login";
+        }); 
 
+	}
+	var room="";
 	socket.on('Pairing', function(data){
 		$('#msg_content').html(
 			`<div class="d-flex justify-content-start mb-4">
@@ -64,11 +86,6 @@ $(document).ready(function(){
 				</div>
 			</div>`
 		)  
-	})
-	//send user information to backend
-	socket.emit('newUser',{
-		username: '<%= user.username %>',
-		uid: '<%= user.uid %>'
 	})
 
 	var sender_name;
