@@ -3,9 +3,6 @@ with Nodejs Socket.io Firebase
 ===
 
 
-## Beginners Guide
-
-If you are a total beginner to this, start here!
 ## About the project
 
 ### Introduction
