@@ -43,7 +43,7 @@ Register
 Chat histoy  
 * The friend list page can show the chat history with friends
 
-<img src="https://i.imgur.com/AApuUUt.gif">
+<img src="https://i.imgur.com/AApuUUt.gif" width: 650>
 
 Chat with friend in realtime
 * click a friend on the friend list to enter an exclusive chat room
