@@ -1,4 +1,5 @@
-Build blog with PHP MySQL
+One to One Random Chatroom  
+with Nodejs Socket.io Firebase
 ===
 
 
@@ -6,62 +7,65 @@ Build blog with PHP MySQL
 
 ### Introduction
 ---
-![](https://i.imgur.com/jgzoF86.png)
+![](https://i.imgur.com/8ILnVPz.png)
 
-This project can see the all articles that created by users. Login the blog, you will enter your own page. In this page, you can post the artical and play the turntable game. 
+This project can chat with friends realtime. Enter the random chat room, and you can chat with others in real time as well as send friend request.
 
 ### Built with
 ----
-<img alt="PHP" src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"><img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/><img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/><img alt="MySQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
-* FrontEnd: Use html with Bootstrap  
-* BackEnd: Use PHP                            
-* Use AJAX in javascript
-* Database: MySQL
+<img alt="NodeJS" src="https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white"/><img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/><img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+* FrontEnd: Use EJS with Bootstrap  
+* BackEnd: Use Node.js                            
+* Use the Socket.io to establish the connection
+* Database: Firebase
 
 ## The feature of the project
 
 ### Login and Register
 ---
 
-<img src="https://i.imgur.com/rlKGVtx.png" width="1000">
+![](https://i.imgur.com/JqlZzaL.png)
 
 Login  
-* Cannot use dumplicate email address.
-* Password and confirm password must be the same.
+* cannot use dumplicate email address
+* the password must not be less than 6 digits
+* password and confirm password must be the same
 
 Register 
-* Need to use an email address as a registered account .
-* If you type the password correctly, you will enter the friend list page.
+* need to use an email address as a registered account 
+* If you type the password correctly, you will enter the friend list page
 
-### Searching posts page
+### Friend list page
 ---
-<img src="https://i.imgur.com/rMGQTLp.gif" width="1000">
-<img src="https://i.imgur.com/swtY1ij.png" width="1000">
 
-Search post
-* Enter title of th posts in the search bar to do a live search. 
+Chat histoy  
+* The friend list page can show the chat history with friends
 
-Read the articles
-* Click the title to read the whole content of the posts.
+<img src="https://i.imgur.com/AApuUUt.gif" width="480">
 
-Comment and like the post
-* Users can left the comments and press the like button of the posts that have posted by others.
+Chat with friend in realtime
+* click a friend on the friend list to enter an exclusive chat room
 
-### Main page
+<a href="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2"><img src="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2" style="width: 650px; max-width: 100%; height: auto;" title="Click to enlarge picture" />
+
+### Random chat room
 ---
-![](https://i.imgur.com/jgzoF86.png)
 
-Post, edit, and delete the article
-* Users can post the articles in their own page.
-* After posting the articles, users can edit title and content of the posts.
-* Users can delete the posts that have posted.
+Random chat
+* Enter the random chat room, you will be in waiting queue and wait for matching with others 
+* Someone who is your friend in waiting queue cannot match with you
 
-Comment and like the aticles
-* Users can left the comments and press the like button.
-* The number of the likes and comments will show on the post.
+Send friend request
+* In the random chat room, if both users send friend request, they become friends
+* If one of the users in the chat room is offline, and the other one cannot send friend request
 
-Play the turntable game
-* When you post the articles, you will get the tickets.
-* Using one ticke can play the turntable game once.
+Rematch
+* In the random chat room, if one of users click the rematch button, two users will be paired with a different online user, respectively
 
-<img src="https://i.imgur.com/rb7USlI.gif" width="1000">
+
+
+
+
+
+
+
