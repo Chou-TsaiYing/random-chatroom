@@ -46,7 +46,7 @@ Chat histoy
 Chat with friend in realtime
 * click a friend on the friend list to enter an exclusive chat room
 
-<a href="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2"><img src="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2" style="width: 500px; height: auto;" title="Click to enlarge picture" />
+<a href="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2"><img src="https://drive.google.com/uc?export=view&id=1TXdzlAL_ZmlTbWhpy2MQKmcgfH3EtKX2" style="width: 480px; height: auto;" title="Click to enlarge picture" />
 
 ### Random chat room
 ---
